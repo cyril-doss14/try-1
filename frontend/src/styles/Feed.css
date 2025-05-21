@@ -1,0 +1,487 @@
+.feed-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.feed-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns fixed */
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .feed-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.idea-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+
+.idea-card:hover {
+  transform: translateY(-3px);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.idea-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.idea-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #333;
+  flex-grow: 1;
+  max-width: 70%;
+}
+
+/* Follow/Unfollow button */
+.follow-btn,
+.unfollow-btn {
+  background-color: #2c7be5;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  height: 30px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+  width: 90px;
+  text-align: center;
+}
+
+.follow-btn:hover,
+.unfollow-btn:hover {
+  transform: scale(1.05);
+}
+
+.follow-btn.followed {
+  background-color: #28a745;
+}
+
+.follow-btn.followed:hover {
+  background-color: #218838;
+}
+
+.unfollow-btn {
+  background-color: #dc3545;
+}
+
+.unfollow-btn:hover {
+  background-color: #c82333;
+}
+
+.idea-author {
+  color: #555;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.idea-description {
+  color: #444;
+  font-size: 0.95rem;
+  margin: 10px 0;
+}
+
+.file-preview {
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  object-fit: contain;
+  transition: transform 0.2s;
+}
+
+.preview-image:hover {
+  transform: scale(1.02);
+}
+
+.idea-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 1rem;
+}
+
+.idea-meta span {
+  background: #f5f5f5;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* Like button */
+.like-button {
+  background-color: #2c7be5;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.like-button:hover {
+  background-color: #1a68d1;
+  transform: scale(1.02);
+}
+
+.like-button:active {
+  transform: scale(0.98);
+}
+
+.like-button.liked {
+  background-color: #1a68d1;
+  font-weight: bold;
+}
+
+/* Popup background */
+.custom-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Popup content box */
+.custom-popup-inner {
+  position: relative;
+  background: #fff;
+  padding: 30px 24px 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 520px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Close button */
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  z-index: 10;
+  padding: 0;
+}
+
+.popup-close:hover {
+  background: #333;
+}
+
+/* Popup image */
+.custom-popup-inner .preview-image {
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Dropdown menu styling */
+.domain-dropdown {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.domain-dropdown select {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  width: 200px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.domain-dropdown select:hover {
+  border-color: #007bff;
+}
+
+.domain-dropdown select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.domain-dropdown option {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+}
+
+.domain-dropdown option:hover {
+  background-color: #f1f1f1;
+}
+
+.domain-dropdown option:checked {
+  background-color: #007bff;
+  color: white;
+}
+
+.user-idea-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.user-idea-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Reuse existing popup styles from feed.css */
+.custom-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-popup-inner {
+  position: relative;
+  background: #fff;
+  padding: 30px 24px 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 520px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  z-index: 10;
+  padding: 0;
+}
+
+.popup-close:hover {
+  background: #333;
+}
+
+.custom-popup-inner .preview-image {
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Small right-aligned button like "+ Add More" */
+.small-button {
+  background-color: #2c7be5;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: auto;
+  width: auto;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.small-button:hover {
+  background-color: #1a68d1;
+  transform: scale(1.05);
+}
+
+/* Optional container for "My Posts" and button alignment */
+.feed-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.likes-section {
+  margin-top: 10px;
+}
+
+.likes-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 5px;
+}
+
+.likes-list li {
+  font-size: 0.9rem;
+  color: #333;
+}
+.liked-by-meta {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.liked-user-tag {
+  background: #e7f3ff;
+  color: #007bff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.collaborate-btn, .collaborators-btn {
+  background-color: #2c7be5;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  height: 30px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+  width: 130px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.collaborate-btn:hover, .collaborators-btn:hover {
+  background-color: #0056b3;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+/* ✅ Idea of the Day wrapper inside feed */
+.idea-day-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.idea-day-card {
+  background: #fdf4ff;
+  border-left: 6px solid #a855f7;
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px; /* Prevent it from overflowing */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  cursor: pointer; /* 🔥 This makes it look clickable */
+
+}
+
+/* Image inside Idea of the Day */
+.idea-day-card img {
+  max-width: 100%;
+  max-height: 300px; /* Limit image height */
+  object-fit: contain;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.idea-day-card h3 {
+  font-size: 1.5rem;
+  color: #6b21a8;
+  margin-bottom: 0.5rem;
+}
+
+.idea-day-card p {
+  font-size: 1rem;
+  color: #444;
+  margin: 0;
+}

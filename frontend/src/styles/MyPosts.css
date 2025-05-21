@@ -1,0 +1,81 @@
+/* Header with button */
+.header-with-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Add More Posts button */
+  .add-more-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .add-more-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Bottom Add More button */
+  .add-more-container {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .add-more-bottom-button {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .add-more-bottom-button:hover {
+    background-color: #0b7dda;
+  }
+  
+  /* Create First Post button */
+  .create-first-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+  }
+  
+  .create-first-button:hover {
+    background-color: #45a049;
+  }
+
+  .collaborate-btn, .collaborators-btn {
+    background-color: #2c7be5;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    height: 30px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+    width: 150px;
+    margin-right: 10px;
+    text-align: center;
+  }
+  
+  .collaborate-btn:hover, .collaborators-btn:hover {
+    background-color: #0056b3;
+  }

@@ -1,0 +1,262 @@
+/* Form Container */
+.form-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-image: url('https://t3.ftcdn.net/jpg/03/22/30/46/360_F_322304683_7ysRarFkmy2osfPKTOYQv7qTPofKelfb.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-header {
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Form Sections */
+.form-section {
+    margin-bottom: 25px;
+}
+
+.section-header {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Form Grid Layout */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Form Fields */
+.form-field {
+    margin-bottom: 15px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: #3498db;
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-field textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* File Upload */
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.file-upload-btn {
+    padding: 8px 15px;
+    background-color: #000000;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.file-upload-btn:hover {
+    background-color: #4b358f;
+}
+
+.file-name {
+    font-size: 14px;
+    color: #d1d1d1;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.form-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.skip-btn {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.submit-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.skip-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.submit-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Checkbox Styles */
+.checkbox-group {
+    margin-top: 15px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-item input {
+    margin-right: 10px;
+}
+
+/* Table Styles */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.info-table th,
+.info-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.info-table th {
+    background-color: #f5f5f5;
+    font-weight: 500;
+}
+
+/* Declaration Section */
+.declaration-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.declaration-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+/* Add these styles to your existing CSS */
+
+.custom-form {
+    all: unset;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* Increased gap between fields */
+    width: 100%;
+  }
+  
+  .spaced-field {
+    margin-bottom: 20px; /* Added space between fields */
+  }
+  
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    width: calc(100% - 30px); /* Adjusted width to stay within container */
+    max-width: 100%;
+    padding: 12px 15px;
+    margin: 5px 0;
+  }
+  
+  .form-container {
+    max-width: 800px;
+    width: 90%;
+    padding: 20px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+  }
+  
+  /* Ensure file upload stays within bounds */
+  .file-upload {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .file-name {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .file-preview {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+  }
+  
+  .preview-image {
+    max-width: 100%;
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .file-info {
+    padding: 8px;
+    background: #f5f5f5;
+    border-radius: 4px;
+  }
+  .page-wrapper {
+    padding: 20px;
+    margin-left: 100px; /* To offset the fixed sidebar */
+    box-sizing: border-box;
+  }

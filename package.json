@@ -1,0 +1,19 @@
+{
+  "name": "startup-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run start --prefix frontend\" \"npm run dev --prefix backend\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.3",
+    "react": "^19.0.0",
+    "react-confetti": "^6.4.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.4.0",
+    "recharts": "^2.15.3"
+  }
+}

@@ -1,0 +1,4 @@
+{
+    "jwtSecret": "your_strong_secret_key_here",
+    "mongoURI": "mongodb://localhost:27017/startup-app"
+  }

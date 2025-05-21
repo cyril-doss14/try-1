@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    image: cyrildoss14/startupapp-1:latest
+    build: .
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./backend/uploads:/app/backend/uploads
+    environment:
+      - PORT=5001
+      - MONGO_URI=mongodb://mongo:27017/startup-app-1
+      - FRONTEND_URL=http://localhost:5001
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:

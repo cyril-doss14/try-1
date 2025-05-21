@@ -1,0 +1,123 @@
+/* LandingPage.css */
+.landing-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #1e3c72, #2a5298);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  color: white;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 2rem;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.landing-content {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.logo-text {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 40px #00bfff;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 40px #00bfff;
+  }
+  to {
+    text-shadow: 0 0 20px #1e90ff, 0 0 30px #1e90ff, 0 0 60px #1e90ff;
+  }
+}
+
+.tagline {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+  color: #f0f0f0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  min-width: 160px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: scale(1.05);
+}
+
+/* Ensure that the stat label and number are white */
+.stat-box .stat-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white !important; /* Hard code the color to white */
+}
+
+.stat-box .stat-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white !important; /* Hard code the color to white */
+}
+
+.landing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.landing-buttons button {
+  background-color: white;
+  color: #007bff;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.landing-buttons button:hover {
+  background-color: #007bff;
+  color: white;
+}

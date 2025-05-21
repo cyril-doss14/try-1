@@ -1,0 +1,55 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 115vh;
+    background: url('https://img.freepik.com/premium-vector/background-dark-blue-white-middle_477352-22.jpg');
+    background-size:cover;
+    
+}
+
+form {
+    background:transparent;
+    height: 430px;
+    width: 350px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;  /* Enable flexbox for form elements */
+    flex-direction: column;  /* Arrange form elements vertically */
+    align-items: center;  /* Center the elements horizontally */
+    gap: 15px;  /* Add space between elements */
+  }
+  
+.auth-card-wrapper {
+    position: relative;
+    width: 450px;
+    height: 525px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.auth-card-wrapper.flip {
+    transform: rotateY(180deg);
+}
+
+.auth-card {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background-image: url('https://media.istockphoto.com/id/1176497914/vector/abstract-blue-background.jpg?s=170667a&w=0&k=20&c=Vegvpsh40Apstv6wwgMTk8CcCBljiMfRjqyPsnwBTDQ=');
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.toggle-link {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}

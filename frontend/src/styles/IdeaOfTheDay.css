@@ -1,0 +1,36 @@
+.idea-day-card {
+    background: #fdf4ff;
+    border-left: 6px solid #a855f7;
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Animation class */
+  .animate-tilt {
+    animation: tilt-shake 1.2s infinite alternate ease-in-out;
+  }
+  
+  /* Keyframes for tilt/shake effect */
+  @keyframes tilt-shake {
+    0% {
+      transform: rotate(-1deg);
+    }
+    100% {
+      transform: rotate(1deg);
+    }
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .floating-icon {
+    animation: float 1.6s ease-in-out infinite;
+  }
+  
