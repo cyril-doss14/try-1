@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    DOCKER_IMAGE = 'cyrildoss14/startupapp-1'
+    DOCKER_IMAGE = 'cyrildoss14/startupapp-3'
     DOCKER_TAG = 'latest'
   }
 
@@ -40,14 +40,5 @@ pipeline {
     }
   }
 
-  post {
-    always {
-      echo '✔️ Pipeline completed.'
-    }
-    failure {
-      mail to: 'cyrildoss007@gmail.com',
-           subject: '❌ Jenkins Build Failed',
-           body: 'Check your Jenkins console output for failure details.'
-    }
-  }
+  
 }
